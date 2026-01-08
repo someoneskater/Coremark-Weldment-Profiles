@@ -1,0 +1,199 @@
+{
+  "profiles": [
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "3/4 x 3/4 x 1/8",
+      "dimensions": {
+        "leg_a": 0.75,
+        "leg_b": 0.75,
+        "thickness": 0.125
+      },
+      "price_per_foot": 89,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "1 x 1 x 1/8",
+      "dimensions": {
+        "leg_a": 1.0,
+        "leg_b": 1.0,
+        "thickness": 0.125
+      },
+      "price_per_foot": 120,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "1-1/4 x 1-1/4 x 1/8",
+      "dimensions": {
+        "leg_a": 1.25,
+        "leg_b": 1.25,
+        "thickness": 0.125
+      },
+      "price_per_foot": 165,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "1-1/2 x 1-1/2 x 1/8",
+      "dimensions": {
+        "leg_a": 1.5,
+        "leg_b": 1.5,
+        "thickness": 0.125
+      },
+      "price_per_foot": 225,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "1-1/2 x 1-1/2 x 3/16",
+      "dimensions": {
+        "leg_a": 1.5,
+        "leg_b": 1.5,
+        "thickness": 0.1875
+      },
+      "price_per_foot": 310,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "2 x 2 x 1/8",
+      "dimensions": {
+        "leg_a": 2.0,
+        "leg_b": 2.0,
+        "thickness": 0.125
+      },
+      "price_per_foot": 295,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "2 x 2 x 3/16",
+      "dimensions": {
+        "leg_a": 2.0,
+        "leg_b": 2.0,
+        "thickness": 0.1875
+      },
+      "price_per_foot": 420,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "2 x 2 x 1/4",
+      "dimensions": {
+        "leg_a": 2.0,
+        "leg_b": 2.0,
+        "thickness": 0.25
+      },
+      "price_per_foot": 545,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "2-1/2 x 2-1/2 x 3/16",
+      "dimensions": {
+        "leg_a": 2.5,
+        "leg_b": 2.5,
+        "thickness": 0.1875
+      },
+      "price_per_foot": 535,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "2-1/2 x 2-1/2 x 1/4",
+      "dimensions": {
+        "leg_a": 2.5,
+        "leg_b": 2.5,
+        "thickness": 0.25
+      },
+      "price_per_foot": 695,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "3 x 3 x 3/16",
+      "dimensions": {
+        "leg_a": 3.0,
+        "leg_b": 3.0,
+        "thickness": 0.1875
+      },
+      "price_per_foot": 650,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "3 x 3 x 1/4",
+      "dimensions": {
+        "leg_a": 3.0,
+        "leg_b": 3.0,
+        "thickness": 0.25
+      },
+      "price_per_foot": 850,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "3 x 3 x 3/8",
+      "dimensions": {
+        "leg_a": 3.0,
+        "leg_b": 3.0,
+        "thickness": 0.375
+      },
+      "price_per_foot": 1195,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "4 x 4 x 1/4",
+      "dimensions": {
+        "leg_a": 4.0,
+        "leg_b": 4.0,
+        "thickness": 0.25
+      },
+      "price_per_foot": 1150,
+      "unit": "USD"
+    },
+    {
+      "material": "Stainless Steel",
+      "grade": "304",
+      "type": "Equal Leg Angle",
+      "size": "4 x 4 x 3/8",
+      "dimensions": {
+        "leg_a": 4.0,
+        "leg_b": 4.0,
+        "thickness": 0.375
+      },
+      "price_per_foot": 1330,
+      "unit": "USD"
+    }
+  ]
+}
