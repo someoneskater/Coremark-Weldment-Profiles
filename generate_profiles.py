@@ -323,7 +323,10 @@ class SolidWorksProfileGenerator:
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
             
             # Save as Library Feature Part
-            # SaveAs arguments: FileName
+            # SaveAs3 arguments:
+            #   FileName: output path
+            #   SaveOptions: 0 = default save options
+            #   Flags: 2 = silent mode (no prompts)
             errors = 0
             warnings = 0
             result = doc.SaveAs3(output_path, 0, 2)
