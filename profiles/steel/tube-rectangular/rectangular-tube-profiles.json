@@ -1,0 +1,38 @@
+{
+  "material": "Steel",
+  "type": "Rectangular Tube",
+  "profiles": [
+    {
+      "size": "1x2",
+      "thickness": "0.065",
+      "price": 14.25,
+      "cost_per_lb": 1.20,
+      "weight_per_ft": 1.30,
+      "sku": "STEEL-RECT-1X2-065"
+    },
+    {
+      "size": "2x3",
+      "thickness": "0.125",
+      "price": 28.50,
+      "cost_per_lb": 1.25,
+      "weight_per_ft": 4.32,
+      "sku": "STEEL-RECT-2X3-125"
+    },
+    {
+      "size": "2x4",
+      "thickness": "0.125",
+      "price": 32.75,
+      "cost_per_lb": 1.28,
+      "weight_per_ft": 5.02,
+      "sku": "STEEL-RECT-2X4-125"
+    },
+    {
+      "size": "3x5",
+      "thickness": "0.188",
+      "price": 55.00,
+      "cost_per_lb": 1.30,
+      "weight_per_ft": 9.42,
+      "sku": "STEEL-RECT-3X5-188"
+    }
+  ]
+}

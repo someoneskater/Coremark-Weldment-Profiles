@@ -1,0 +1,54 @@
+{
+  "material": "Steel",
+  "type": "Square Tube",
+  "profiles": [
+    {
+      "size": "1x1",
+      "thickness": "0.065",
+      "price": 12.50,
+      "cost_per_lb": 1.15,
+      "weight_per_ft": 1.04,
+      "sku": "STEEL-SQ-1X1-065"
+    },
+    {
+      "size": "1x1",
+      "thickness": "0.083",
+      "price": 15.75,
+      "cost_per_lb": 1.15,
+      "weight_per_ft": 1.31,
+      "sku": "STEEL-SQ-1X1-083"
+    },
+    {
+      "size": "2x2",
+      "thickness": "0.125",
+      "price": 25.50,
+      "cost_per_lb": 1.25,
+      "weight_per_ft": 3.65,
+      "sku": "STEEL-SQ-2X2-125"
+    },
+    {
+      "size": "2x2",
+      "thickness": "0.188",
+      "price": 35.25,
+      "cost_per_lb": 1.25,
+      "weight_per_ft": 5.41,
+      "sku": "STEEL-SQ-2X2-188"
+    },
+    {
+      "size": "3x3",
+      "thickness": "0.125",
+      "price": 38.00,
+      "cost_per_lb": 1.30,
+      "weight_per_ft": 5.59,
+      "sku": "STEEL-SQ-3X3-125"
+    },
+    {
+      "size": "4x4",
+      "thickness": "0.125",
+      "price": 48.50,
+      "cost_per_lb": 1.35,
+      "weight_per_ft": 7.54,
+      "sku": "STEEL-SQ-4X4-125"
+    }
+  ]
+}

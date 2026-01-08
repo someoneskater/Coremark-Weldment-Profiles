@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Coremark Weldment Profile",
+  "description": "Schema for Coremark Metals weldment profile properties",
+  "type": "object",
+  "required": ["size", "thickness", "price", "cost_per_lb", "weight_per_ft", "sku"],
+  "properties": {
+    "size": {
+      "type": "string",
+      "description": "Profile size (e.g., '2x2', '1x3', '4x6')"
+    },
+    "thickness": {
+      "type": "string",
+      "description": "Wall thickness (e.g., '0.125', '0.25', '3/16')"
+    },
+    "price": {
+      "type": "number",
+      "description": "Current price per unit",
+      "minimum": 0
+    },
+    "cost_per_lb": {
+      "type": "number",
+      "description": "Cost per pound",
+      "minimum": 0
+    },
+    "weight_per_ft": {
+      "type": "number",
+      "description": "Weight per foot in pounds",
+      "minimum": 0
+    },
+    "sku": {
+      "type": "string",
+      "description": "SKU/Part number for ordering"
+    }
+  }
+}

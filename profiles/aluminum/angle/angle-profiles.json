@@ -1,0 +1,38 @@
+{
+  "material": "Aluminum",
+  "type": "Angle",
+  "profiles": [
+    {
+      "size": "1x1",
+      "thickness": "0.125",
+      "price": 18.50,
+      "cost_per_lb": 2.85,
+      "weight_per_ft": 0.38,
+      "sku": "ALUM-ANG-1X1-125"
+    },
+    {
+      "size": "2x2",
+      "thickness": "0.125",
+      "price": 28.75,
+      "cost_per_lb": 2.75,
+      "weight_per_ft": 0.81,
+      "sku": "ALUM-ANG-2X2-125"
+    },
+    {
+      "size": "2x2",
+      "thickness": "0.188",
+      "price": 38.50,
+      "cost_per_lb": 2.75,
+      "weight_per_ft": 1.19,
+      "sku": "ALUM-ANG-2X2-188"
+    },
+    {
+      "size": "3x3",
+      "thickness": "0.188",
+      "price": 52.00,
+      "cost_per_lb": 2.80,
+      "weight_per_ft": 1.86,
+      "sku": "ALUM-ANG-3X3-188"
+    }
+  ]
+}
