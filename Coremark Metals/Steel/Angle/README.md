@@ -8,7 +8,9 @@ This directory contains SolidWorks weldment profile library files for A36 Hot Ro
 Coremark Metals/
 └── Steel/
     └── Angle/
-        ├── CATALOG.md (this file - complete specifications and pricing)
+        ├── README.md (this file - usage instructions)
+        ├── CATALOG.md (complete specifications and pricing)
+        ├── PROFILE_INDEX.md (detailed profile list)
         ├── [Size]x[Size]x[Thickness].SLDLFP (individual profile files)
 ```
 
@@ -17,7 +19,7 @@ Coremark Metals/
 This library includes **Steel Equal Leg Angles** with:
 - **Sizes:** 1/2" to 8" leg dimensions
 - **Thickness:** 1/8" to 1" wall thickness
-- **Price Range:** $19 to $1,556 per 20-foot length
+- **Price Range:** $19 to $1,987 per 20-foot length
 
 ### Material Properties
 - **Grade:** ASTM A36 Hot Rolled Steel

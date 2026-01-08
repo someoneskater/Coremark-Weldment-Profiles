@@ -14,7 +14,7 @@ A36 Hot Rolled Steel Equal Leg Angles for structural applications including brac
 ## Size Range
 - **Leg Sizes:** 1/2" to 8"
 - **Wall Thickness:** 1/8" to 1"
-- **Price Range:** $19 - $1556
+- **Price Range:** $19 - $1,987
 
 ## Available Sizes and Configurations
 

@@ -72,7 +72,7 @@ All dimensions in inches (decimal format)
 | 8x8x0.5.SLDLFP | 8" | 1/2" | 26.40 | $1029 |
 | 8x8x0.625.SLDLFP | 8" | 5/8" | 32.70 | $1274 |
 | 8x8x0.75.SLDLFP | 8" | 3/4" | 38.90 | $1516 |
-| 8x8x1.SLDLFP | 8" | 1" | 51.00 | $1987 |
+| 8x8x1.SLDLFP | 8" | 1" | 51.00 | $1,987 |
 
 ## Summary Statistics
 

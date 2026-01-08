@@ -10,7 +10,7 @@ SolidWorks weldment profile library with 558 profiles from Coremark Metals inclu
 - **Count:** 58 profiles
 - **Sizes:** 1/2" to 8" leg dimensions
 - **Thickness:** 1/8" to 1" wall thickness
-- **Price Range:** $19 - $1,556 per 20-foot length
+- **Price Range:** $19 - $1,987 per 20-foot length
 - **Material:** ASTM A36 Hot Rolled Steel
 - **Location:** `Coremark Metals/Steel/Angle/`
 - **Documentation:** See [Angle/README.md](Coremark%20Metals/Steel/Angle/README.md) for details
