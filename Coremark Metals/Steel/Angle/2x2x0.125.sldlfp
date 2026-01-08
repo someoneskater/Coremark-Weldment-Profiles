@@ -1,0 +1,9 @@
+SOLIDWORKS Library Feature Part File
+Profile: 2x2x0.125
+Material: Steel
+Type: Angle
+Supplier: Coremark Metals
+Generated for weldment profile library
+
+This is a placeholder profile file for the Coremark Metals weldment library.
+In production, this would be a binary .sldlfp file created in SolidWorks.

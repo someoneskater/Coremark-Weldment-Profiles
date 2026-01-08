@@ -1,0 +1,9 @@
+SOLIDWORKS Library Feature Part File
+Profile: 10x6x0.250
+Material: Steel
+Type: Rectangular Tube
+Supplier: Coremark Metals
+Generated for weldment profile library
+
+This is a placeholder profile file for the Coremark Metals weldment library.
+In production, this would be a binary .sldlfp file created in SolidWorks.

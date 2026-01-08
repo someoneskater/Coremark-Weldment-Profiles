@@ -1,0 +1,31 @@
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# SolidWorks temporary files
+~$*
+*.SLDPRT
+*.SLDASM
+*.SLDDRT
+*.SLDDRW
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Scripts (if temporary)
+*.sh
+
+# Build artifacts
+build/
+dist/
+*.zip
+*.tar.gz

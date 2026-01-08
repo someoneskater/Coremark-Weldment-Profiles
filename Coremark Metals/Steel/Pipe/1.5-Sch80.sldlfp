@@ -1,0 +1,9 @@
+SOLIDWORKS Library Feature Part File
+Profile: 1.5-Sch80
+Material: Steel
+Type: Pipe
+Supplier: Coremark Metals
+Generated for weldment profile library
+
+This is a placeholder profile file for the Coremark Metals weldment library.
+In production, this would be a binary .sldlfp file created in SolidWorks.
