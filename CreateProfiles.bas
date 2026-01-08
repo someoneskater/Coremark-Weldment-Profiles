@@ -372,18 +372,19 @@ Function CreateNewPartDocument(swApp As Object) As Object
     Dim swModel As Object
     Dim filePath As String
     Dim templatePath As String
+    Dim userPrefs As Long
     
     ' Try to get the default part template
+    templatePath = ""
     On Error Resume Next
     templatePath = swApp.GetUserPreferenceStringValue(swDefaultTemplatePart)
+    If Err.Number <> 0 Then
+        templatePath = ""  ' Use empty string if preference not found
+    End If
     On Error GoTo ErrorHandler
     
-    ' If no template is set, use empty string (will prompt user or use system default)
-    If templatePath = "" Then
-        templatePath = ""
-    End If
-    
     ' Create a new part document
+    ' Parameters: template path, document type, paper size (0=default), sheet format size (0=default)
     Set swModel = swApp.NewDocument(templatePath, swDocPart, 0, 0)
     
     If swModel Is Nothing Then
