@@ -383,6 +383,7 @@ Function CreateNewPartDocument(swApp As Object) As Object
     If Err.Number <> 0 Then
         templatePath = ""  ' Fallback to system default if preference not found
     End If
+    Err.Clear  ' Clear error state before resuming normal error handling
     On Error GoTo ErrorHandler
     
     ' Create a new part document
