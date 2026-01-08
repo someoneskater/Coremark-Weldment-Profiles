@@ -88,14 +88,14 @@ A36 Hot Rolled Steel Equal Leg Angles for structural applications including brac
 - 3/8" thickness - Weight: 14.90 lbs/ft - Price: ~$580/20ft
 - 1/2" thickness - Weight: 19.60 lbs/ft - Price: ~$764/20ft
 - 5/8" thickness - Weight: 24.20 lbs/ft - Price: ~$943/20ft
-- 3/4" thickness - Weight: 28.70 lbs/ft - Price: ~$1118/20ft
-- 1" thickness - Weight: 37.40 lbs/ft - Price: ~$1457/20ft
+- 3/4" thickness - Weight: 28.70 lbs/ft - Price: ~$1,118/20ft
+- 1" thickness - Weight: 37.40 lbs/ft - Price: ~$1,457/20ft
 
 ### 8" x 8" Equal Leg Angle
-- 1/2" thickness - Weight: 26.40 lbs/ft - Price: ~$1029/20ft
-- 5/8" thickness - Weight: 32.70 lbs/ft - Price: ~$1274/20ft
-- 3/4" thickness - Weight: 38.90 lbs/ft - Price: ~$1516/20ft
-- 1" thickness - Weight: 51.00 lbs/ft - Price: ~$1987/20ft
+- 1/2" thickness - Weight: 26.40 lbs/ft - Price: ~$1,029/20ft
+- 5/8" thickness - Weight: 32.70 lbs/ft - Price: ~$1,274/20ft
+- 3/4" thickness - Weight: 38.90 lbs/ft - Price: ~$1,516/20ft
+- 1" thickness - Weight: 51.00 lbs/ft - Price: ~$1,987/20ft
 
 ## Standard Stock Length
 - **Default:** 20 feet (240 inches)
