@@ -1,0 +1,95 @@
+# SolidWorks Library Feature Part File Template
+# This is a PLACEHOLDER - Actual .SLDLFP files must be created in SolidWorks
+
+## File Information
+- **Profile Name:** 1" x 1" x 1/8" Equal Leg Angle
+- **File Name:** 1x1x0.125.SLDLFP
+- **Material:** ASTM A36 Hot Rolled Steel
+- **Supplier:** Coremark Metals
+
+## Dimensions
+- **Leg Size:** 1.000 inch
+- **Wall Thickness:** 0.125 inch (1/8")
+- **Outside Corner Radius:** 0.125 inch (typical)
+- **Inside Corner Radius:** 0.063 inch (typical)
+
+## Properties to Include
+- **Weight per Foot:** 0.80 lbs/ft
+- **Price per 20ft:** $32
+- **Cross-Sectional Area:** 0.234 sq in
+- **Stock Length:** 240 inches (20 feet)
+
+## Sketch Requirements
+1. Create on Front Plane
+2. Two perpendicular lines forming a right angle
+3. Lines are 1.000" long each
+4. Wall thickness 0.125" 
+5. Outside corner radius 0.125"
+6. Inside corner radius 0.063"
+7. Sketch centered at origin (0,0)
+8. Fully dimensioned and constrained
+
+## Custom Properties to Set in SolidWorks
+When creating the .SLDLFP file, set these custom properties:
+
+| Property Name | Value |
+|---------------|-------|
+| Material | ASTM A36 Hot Rolled Steel |
+| Supplier | Coremark Metals |
+| Weight_per_Foot | 0.80 |
+| Unit_Weight | lbs/ft |
+| Price_per_20ft | 32 |
+| Price_Currency | USD |
+| Leg_Size | 1.000 |
+| Wall_Thickness | 0.125 |
+| Description | Hot Rolled Steel Equal Leg Angle |
+| Standard | ASTM A36 |
+| Type | Equal Leg Angle |
+| Stock_Length | 240 |
+| Length_Unit | inches |
+
+## Creation Steps in SolidWorks
+
+1. **Create New Part:**
+   - File > New > Part
+
+2. **Create Sketch:**
+   - Select Front Plane
+   - Sketch > 2D Sketch
+   - Draw the equal leg angle profile:
+     * Start at origin
+     * Draw first leg horizontally to the right
+     * Draw second leg vertically upward
+     * Add corner radius at outside corner
+     * Add inner fillet radius
+     * Offset lines to create wall thickness
+   
+3. **Dimension Sketch:**
+   - Add dimensions for leg length
+   - Add dimension for wall thickness
+   - Add dimension for corner radii
+   - Fully constrain the sketch
+
+4. **Save as Library Feature:**
+   - Select the sketch
+   - File > Save As
+   - Save as type: Lib Feat Part (*.sldlfp)
+   - Save to: Coremark Metals/Steel/Angle/
+   - File name: 1x1x0.125.SLDLFP
+
+5. **Add Custom Properties:**
+   - File > Properties
+   - Click Custom tab
+   - Add all properties listed above
+
+6. **Verify:**
+   - Test the profile using Structural Member feature
+   - Check that dimensions are correct
+   - Verify custom properties display properly
+
+## Notes
+- Maintain consistent corner radii across all sizes
+- Ensure sketch is properly centered at origin
+- All dimensions in inches
+- Use decimal format for file names
+- This template applies to all steel equal leg angle profiles with adjusted dimensions
