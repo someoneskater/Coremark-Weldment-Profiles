@@ -16,6 +16,9 @@
 
 Option Explicit
 
+' SolidWorks template path - update this for your SolidWorks version
+Const SOLIDWORKS_TEMPLATE As String = "C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot"
+
 ' Main entry point
 Sub Main()
     Dim swApp As SldWorks.SldWorks
@@ -96,7 +99,7 @@ Sub CreateAngleProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim fileName As String
     
     ' Create new part
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     ' Select Front plane and insert sketch
@@ -135,7 +138,7 @@ Sub CreateTubeProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim boolStatus As Boolean
     Dim fileName As String
     
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
@@ -172,7 +175,7 @@ Sub CreatePipeProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim fileName As String
     Dim innerDia As Double
     
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
@@ -207,7 +210,7 @@ Sub CreateChannelProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim fileName As String
     Dim halfDepth As Double
     
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
@@ -246,7 +249,7 @@ Sub CreateBeamProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim fileName As String
     Dim halfD As Double, halfF As Double, halfW As Double
     
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
@@ -291,7 +294,7 @@ Sub CreateFlatBarProfile(swApp As SldWorks.SldWorks, outputDir As String, _
     Dim boolStatus As Boolean
     Dim fileName As String
     
-    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    Set swModel = swApp.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
     If swModel Is Nothing Then Exit Sub
     
     boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)

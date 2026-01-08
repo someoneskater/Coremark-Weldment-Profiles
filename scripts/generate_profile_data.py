@@ -1,6 +1,6 @@
 """
 Generate comprehensive metal profile data for Coremark Metals library
-Creates 558 profiles across different types and materials
+Creates 734 profiles across different types and materials
 """
 import json
 import random

@@ -23,6 +23,9 @@ except ImportError:
     print("Warning: win32com not available. This script must run on Windows with SolidWorks installed.")
     print("Install with: pip install pywin32")
 
+# SolidWorks template path - update this for your SolidWorks version
+SOLIDWORKS_TEMPLATE = "C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot"
+
 def connect_to_solidworks():
     """Connect to SolidWorks application"""
     try:
@@ -39,7 +42,7 @@ def create_angle_profile(sw_app, profile, output_dir):
     """Create L-shaped angle profile sketch"""
     try:
         # Create new part
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             print(f"Failed to create document for {profile['name']}")
             return False
@@ -101,7 +104,7 @@ def create_angle_profile(sw_app, profile, output_dir):
 def create_tube_profile(sw_app, profile, output_dir):
     """Create rectangular or square tube profile sketch"""
     try:
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             return False
         
@@ -146,7 +149,7 @@ def create_tube_profile(sw_app, profile, output_dir):
 def create_channel_profile(sw_app, profile, output_dir):
     """Create C-channel profile sketch"""
     try:
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             return False
         
@@ -200,7 +203,7 @@ def create_channel_profile(sw_app, profile, output_dir):
 def create_beam_profile(sw_app, profile, output_dir):
     """Create I-beam profile sketch"""
     try:
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             return False
         
@@ -263,7 +266,7 @@ def create_beam_profile(sw_app, profile, output_dir):
 def create_pipe_profile(sw_app, profile, output_dir):
     """Create round pipe profile sketch"""
     try:
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             return False
         
@@ -303,7 +306,7 @@ def create_pipe_profile(sw_app, profile, output_dir):
 def create_flat_bar_profile(sw_app, profile, output_dir):
     """Create flat bar profile sketch"""
     try:
-        sw_model = sw_app.NewDocument("C:\\ProgramData\\SolidWorks\\SOLIDWORKS 2024\\templates\\Part.prtdot", 0, 0, 0)
+        sw_model = sw_app.NewDocument(SOLIDWORKS_TEMPLATE, 0, 0, 0)
         if not sw_model:
             return False
         
