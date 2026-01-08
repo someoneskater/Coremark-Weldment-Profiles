@@ -1,10 +1,10 @@
 # Coremark-Weldment-Profiles
 
-SolidWorks weldment profile library with 558 profiles from Coremark Metals including Steel, Aluminum, and Stainless Steel structural shapes with integrated pricing data.
+SolidWorks weldment profile library with structural profiles from Coremark Metals including Steel, Aluminum, and Stainless Steel shapes with integrated pricing data.
 
 ## Features
 
-- **558 Structural Profiles** organized by material and shape type
+- **65 Structural Profiles** currently available, sourced from Coremark Metals catalog of 558+ profiles
 - **Material Properties** including density, yield strength, and tensile strength
 - **Integrated Pricing Data** with cost per pound, weight per foot, and total price
 - **5 Profile Categories**:
@@ -152,11 +152,13 @@ Coremark-Weldment-Profiles/
 
 | Profile Type | Material | Count | Description |
 |--------------|----------|-------|-------------|
-| steel_equal_leg_angle | A36/A992/A500B | ~24 | Equal leg angle iron |
-| steel_square_tube | A500B | ~100+ | Hollow structural square tubing |
-| aluminum_angle_6061_t6 | 6061-T6 | ~100+ | Aluminum equal leg angle |
-| stainless_angle_304 | 304 SS | ~100+ | Stainless steel equal leg angle |
-| stainless_square_tube_304 | 304 SS | ~100+ | Stainless steel hollow square tube |
+| steel_equal_leg_angle | A36/A992/A500B | 24 | Equal leg angle iron |
+| steel_square_tube | A500B | 15 | Hollow structural square tubing |
+| aluminum_angle_6061_t6 | 6061-T6 | 9 | Aluminum equal leg angle |
+| stainless_angle_304 | 304 SS | 8 | Stainless steel equal leg angle |
+| stainless_square_tube_304 | 304 SS | 9 | Stainless steel hollow square tube |
+
+**Total: 65 profiles** (with 558+ profiles available in the complete Coremark Metals catalog)
 
 ## Data Source
 
