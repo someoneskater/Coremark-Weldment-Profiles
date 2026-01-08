@@ -75,6 +75,42 @@
       "inside_dimension_in": 0.76
     },
     {
+      "size": "1.5x1.5",
+      "wall_thickness": 0.065,
+      "wall_gauge": "16ga",
+      "weight_per_ft_lbs": 1.27,
+      "astm_grade": "A513",
+      "price_per_20ft": 45.00,
+      "sku": "ST-1.5x1.5-16GA",
+      "cost_per_lb": 1.77,
+      "outside_dimension_in": 1.5,
+      "inside_dimension_in": 1.37
+    },
+    {
+      "size": "1.5x1.5",
+      "wall_thickness": 0.083,
+      "wall_gauge": "14ga",
+      "weight_per_ft_lbs": 1.60,
+      "astm_grade": "A513",
+      "price_per_20ft": 55.00,
+      "sku": "ST-1.5x1.5-14GA",
+      "cost_per_lb": 1.72,
+      "outside_dimension_in": 1.5,
+      "inside_dimension_in": 1.334
+    },
+    {
+      "size": "1.5x1.5",
+      "wall_thickness": 0.120,
+      "wall_gauge": "11ga",
+      "weight_per_ft_lbs": 2.25,
+      "astm_grade": "A513",
+      "price_per_20ft": 72.00,
+      "sku": "ST-1.5x1.5-11GA",
+      "cost_per_lb": 1.60,
+      "outside_dimension_in": 1.5,
+      "inside_dimension_in": 1.26
+    },
+    {
       "size": "2x2",
       "wall_thickness": 0.065,
       "wall_gauge": "16ga",
@@ -123,6 +159,54 @@
       "inside_dimension_in": 1.50
     },
     {
+      "size": "2.5x2.5",
+      "wall_thickness": 0.083,
+      "wall_gauge": "14ga",
+      "weight_per_ft_lbs": 2.72,
+      "astm_grade": "A500B",
+      "price_per_20ft": 92.00,
+      "sku": "ST-2.5x2.5-14GA",
+      "cost_per_lb": 1.69,
+      "outside_dimension_in": 2.5,
+      "inside_dimension_in": 2.334
+    },
+    {
+      "size": "2.5x2.5",
+      "wall_thickness": 0.120,
+      "wall_gauge": "11ga",
+      "weight_per_ft_lbs": 3.87,
+      "astm_grade": "A500B",
+      "price_per_20ft": 118.00,
+      "sku": "ST-2.5x2.5-11GA",
+      "cost_per_lb": 1.52,
+      "outside_dimension_in": 2.5,
+      "inside_dimension_in": 2.26
+    },
+    {
+      "size": "2.5x2.5",
+      "wall_thickness": 0.188,
+      "wall_gauge": "3/16in",
+      "weight_per_ft_lbs": 5.59,
+      "astm_grade": "A500B",
+      "price_per_20ft": 168.00,
+      "sku": "ST-2.5x2.5-3/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 2.5,
+      "inside_dimension_in": 2.124
+    },
+    {
+      "size": "2.5x2.5",
+      "wall_thickness": 0.250,
+      "wall_gauge": "1/4in",
+      "weight_per_ft_lbs": 7.11,
+      "astm_grade": "A500B",
+      "price_per_20ft": 215.00,
+      "sku": "ST-2.5x2.5-1/4",
+      "cost_per_lb": 1.51,
+      "outside_dimension_in": 2.5,
+      "inside_dimension_in": 2.00
+    },
+    {
       "size": "3x3",
       "wall_thickness": 0.083,
       "wall_gauge": "14ga",
@@ -145,6 +229,18 @@
       "cost_per_lb": 1.55,
       "outside_dimension_in": 3.0,
       "inside_dimension_in": 2.76
+    },
+    {
+      "size": "3x3",
+      "wall_thickness": 0.188,
+      "wall_gauge": "3/16in",
+      "weight_per_ft_lbs": 6.87,
+      "astm_grade": "A500B",
+      "price_per_20ft": 208.00,
+      "sku": "ST-3x3-3/16",
+      "cost_per_lb": 1.51,
+      "outside_dimension_in": 3.0,
+      "inside_dimension_in": 2.624
     },
     {
       "size": "3x3",
@@ -208,6 +304,18 @@
     },
     {
       "size": "4x4",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 14.83,
+      "astm_grade": "A500B",
+      "price_per_20ft": 445.00,
+      "sku": "ST-4x4-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 4.0,
+      "inside_dimension_in": 3.374
+    },
+    {
+      "size": "4x4",
       "wall_thickness": 0.375,
       "wall_gauge": "3/8in",
       "weight_per_ft_lbs": 17.27,
@@ -229,6 +337,78 @@
       "cost_per_lb": 1.50,
       "outside_dimension_in": 4.0,
       "inside_dimension_in": 3.00
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.125,
+      "wall_gauge": "1/8in",
+      "weight_per_ft_lbs": 8.24,
+      "astm_grade": "A500B",
+      "price_per_20ft": 248.00,
+      "sku": "ST-5x5-1/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.75
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.188,
+      "wall_gauge": "3/16in",
+      "weight_per_ft_lbs": 12.08,
+      "astm_grade": "A500B",
+      "price_per_20ft": 362.00,
+      "sku": "ST-5x5-3/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.624
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.250,
+      "wall_gauge": "1/4in",
+      "weight_per_ft_lbs": 15.62,
+      "astm_grade": "A500B",
+      "price_per_20ft": 468.00,
+      "sku": "ST-5x5-1/4",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.50
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 19.08,
+      "astm_grade": "A500B",
+      "price_per_20ft": 572.00,
+      "sku": "ST-5x5-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.374
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.375,
+      "wall_gauge": "3/8in",
+      "weight_per_ft_lbs": 22.37,
+      "astm_grade": "A500B",
+      "price_per_20ft": 671.00,
+      "sku": "ST-5x5-3/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.25
+    },
+    {
+      "size": "5x5",
+      "wall_thickness": 0.500,
+      "wall_gauge": "1/2in",
+      "weight_per_ft_lbs": 28.43,
+      "astm_grade": "A500B",
+      "price_per_20ft": 853.00,
+      "sku": "ST-5x5-1/2",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 5.0,
+      "inside_dimension_in": 4.00
     },
     {
       "size": "6x6",
@@ -268,6 +448,30 @@
     },
     {
       "size": "6x6",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 23.34,
+      "astm_grade": "A500B",
+      "price_per_20ft": 700.00,
+      "sku": "ST-6x6-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 6.0,
+      "inside_dimension_in": 5.374
+    },
+    {
+      "size": "6x6",
+      "wall_thickness": 0.375,
+      "wall_gauge": "3/8in",
+      "weight_per_ft_lbs": 27.48,
+      "astm_grade": "A500B",
+      "price_per_20ft": 824.00,
+      "sku": "ST-6x6-3/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 6.0,
+      "inside_dimension_in": 5.25
+    },
+    {
+      "size": "6x6",
       "wall_thickness": 0.500,
       "wall_gauge": "1/2in",
       "weight_per_ft_lbs": 35.24,
@@ -277,6 +481,66 @@
       "cost_per_lb": 1.50,
       "outside_dimension_in": 6.0,
       "inside_dimension_in": 5.00
+    },
+    {
+      "size": "7x7",
+      "wall_thickness": 0.188,
+      "wall_gauge": "3/16in",
+      "weight_per_ft_lbs": 16.99,
+      "astm_grade": "A500B",
+      "price_per_20ft": 509.00,
+      "sku": "ST-7x7-3/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 7.0,
+      "inside_dimension_in": 6.624
+    },
+    {
+      "size": "7x7",
+      "wall_thickness": 0.250,
+      "wall_gauge": "1/4in",
+      "weight_per_ft_lbs": 22.42,
+      "astm_grade": "A500B",
+      "price_per_20ft": 672.00,
+      "sku": "ST-7x7-1/4",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 7.0,
+      "inside_dimension_in": 6.50
+    },
+    {
+      "size": "7x7",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 27.60,
+      "astm_grade": "A500B",
+      "price_per_20ft": 828.00,
+      "sku": "ST-7x7-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 7.0,
+      "inside_dimension_in": 6.374
+    },
+    {
+      "size": "7x7",
+      "wall_thickness": 0.375,
+      "wall_gauge": "3/8in",
+      "weight_per_ft_lbs": 32.58,
+      "astm_grade": "A500B",
+      "price_per_20ft": 977.00,
+      "sku": "ST-7x7-3/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 7.0,
+      "inside_dimension_in": 6.25
+    },
+    {
+      "size": "7x7",
+      "wall_thickness": 0.500,
+      "wall_gauge": "1/2in",
+      "weight_per_ft_lbs": 42.05,
+      "astm_grade": "A500B",
+      "price_per_20ft": 1261.00,
+      "sku": "ST-7x7-1/2",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 7.0,
+      "inside_dimension_in": 6.00
     },
     {
       "size": "8x8",
@@ -301,6 +565,30 @@
       "cost_per_lb": 1.50,
       "outside_dimension_in": 8.0,
       "inside_dimension_in": 7.50
+    },
+    {
+      "size": "8x8",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 31.86,
+      "astm_grade": "A500B",
+      "price_per_20ft": 955.00,
+      "sku": "ST-8x8-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 8.0,
+      "inside_dimension_in": 7.374
+    },
+    {
+      "size": "8x8",
+      "wall_thickness": 0.375,
+      "wall_gauge": "3/8in",
+      "weight_per_ft_lbs": 37.69,
+      "astm_grade": "A500B",
+      "price_per_20ft": 1130.00,
+      "sku": "ST-8x8-3/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 8.0,
+      "inside_dimension_in": 7.25
     },
     {
       "size": "8x8",
@@ -340,6 +628,30 @@
     },
     {
       "size": "10x10",
+      "wall_thickness": 0.313,
+      "wall_gauge": "5/16in",
+      "weight_per_ft_lbs": 40.38,
+      "astm_grade": "A500B",
+      "price_per_20ft": 1211.00,
+      "sku": "ST-10x10-5/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 10.0,
+      "inside_dimension_in": 9.374
+    },
+    {
+      "size": "10x10",
+      "wall_thickness": 0.375,
+      "wall_gauge": "3/8in",
+      "weight_per_ft_lbs": 47.90,
+      "astm_grade": "A500B",
+      "price_per_20ft": 1437.00,
+      "sku": "ST-10x10-3/8",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 10.0,
+      "inside_dimension_in": 9.25
+    },
+    {
+      "size": "10x10",
       "wall_thickness": 0.500,
       "wall_gauge": "1/2in",
       "weight_per_ft_lbs": 62.46,
@@ -349,6 +661,18 @@
       "cost_per_lb": 1.50,
       "outside_dimension_in": 10.0,
       "inside_dimension_in": 9.00
+    },
+    {
+      "size": "12x12",
+      "wall_thickness": 0.188,
+      "wall_gauge": "3/16in",
+      "weight_per_ft_lbs": 29.84,
+      "astm_grade": "A500B",
+      "price_per_20ft": 895.00,
+      "sku": "ST-12x12-3/16",
+      "cost_per_lb": 1.50,
+      "outside_dimension_in": 12.0,
+      "inside_dimension_in": 11.624
     },
     {
       "size": "12x12",

@@ -8,7 +8,7 @@ SolidWorks weldment profile library with 558 profiles from Coremark Metals inclu
 - **Wall Thickness**: 16ga (0.065") to 1/2" (0.500")
 - **Price Range**: $32 - $2,708 per 20ft length
 - **Standards**: ASTM A500 Grade B (structural), ASTM A513 (mechanical)
-- **Total Configurations**: 57+ size/thickness combinations
+- **Total Configurations**: 56 size/thickness combinations
 
 See [Coremark Metals/Steel/Square Tube](Coremark%20Metals/Steel/Square%20Tube/) for complete specifications.
 
