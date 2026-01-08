@@ -7,7 +7,7 @@ and creates sketch geometry with custom properties for each profile.
 
 Requirements:
 - SolidWorks must be installed and accessible via COM
-- Python packages: pywin32, pandas
+- Python packages: pywin32
 
 Usage:
     python generate_profiles.py [--output-dir OUTPUT_DIR] [--template TEMPLATE]
