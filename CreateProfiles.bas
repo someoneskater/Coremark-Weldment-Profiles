@@ -16,6 +16,7 @@ Const swDocPart As Long = 1
 Const swSketchLine As Long = 0
 Const swConstraintHorizontal As Long = 1
 Const swConstraintVertical As Long = 2
+Const swDefaultTemplatePart As Long = 0
 
 '*******************************************************************************
 ' Function: CreateAngleProfile
@@ -155,6 +156,14 @@ Function CreateTubeProfile(swApp As Object, outerWidth As Double, outerHeight As
     iw = ow - (2# * t)
     ih = oh - (2# * t)
     
+    ' Validate that wall thickness is not too large
+    If iw <= 0# Or ih <= 0# Then
+        MsgBox "Wall thickness is too large for the given outer dimensions. " & _
+               "Wall thickness must be less than half of both outer width and outer height.", vbExclamation
+        CreateTubeProfile = False
+        Exit Function
+    End If
+    
     ' Center the profile at origin
     Dim halfOW As Double, halfOH As Double
     Dim halfIW As Double, halfIH As Double
@@ -237,6 +246,14 @@ Function CreateRoundTubeProfile(swApp As Object, outerDiameter As Double, wallTh
     ' Calculate inner diameter
     Dim id As Double
     id = od - (2# * t)
+    
+    ' Validate that wall thickness is not too large
+    If id <= 0# Then
+        MsgBox "Wall thickness is too large for the given outer diameter. " & _
+               "Wall thickness must be less than half of the outer diameter.", vbExclamation
+        CreateRoundTubeProfile = False
+        Exit Function
+    End If
     
     Dim swSketchSegment As Object
     
@@ -354,9 +371,20 @@ Function CreateNewPartDocument(swApp As Object) As Object
     
     Dim swModel As Object
     Dim filePath As String
+    Dim templatePath As String
+    
+    ' Try to get the default part template
+    On Error Resume Next
+    templatePath = swApp.GetUserPreferenceStringValue(swDefaultTemplatePart)
+    On Error GoTo ErrorHandler
+    
+    ' If no template is set, use empty string (will prompt user or use system default)
+    If templatePath = "" Then
+        templatePath = ""
+    End If
     
     ' Create a new part document
-    Set swModel = swApp.NewDocument("", swDocPart, 0, 0)
+    Set swModel = swApp.NewDocument(templatePath, swDocPart, 0, 0)
     
     If swModel Is Nothing Then
         MsgBox "Failed to create new part document.", vbCritical
