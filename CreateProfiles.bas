@@ -16,7 +16,8 @@ Const swDocPart As Long = 1
 Const swSketchLine As Long = 0
 Const swConstraintHorizontal As Long = 1
 Const swConstraintVertical As Long = 2
-Const swDefaultTemplatePart As Long = 0
+' User preference key for default part template (swUserPreferenceStringValue_e enumeration)
+Const swDefaultTemplatePart As Long = 0  ' swDefaultTemplatePart from swUserPreferenceStringValue_e
 
 '*******************************************************************************
 ' Function: CreateAngleProfile
@@ -375,11 +376,12 @@ Function CreateNewPartDocument(swApp As Object) As Object
     Dim userPrefs As Long
     
     ' Try to get the default part template
+    ' If no default template is set, empty string will cause SolidWorks to use system default or prompt user
     templatePath = ""
     On Error Resume Next
     templatePath = swApp.GetUserPreferenceStringValue(swDefaultTemplatePart)
     If Err.Number <> 0 Then
-        templatePath = ""  ' Use empty string if preference not found
+        templatePath = ""  ' Fallback to system default if preference not found
     End If
     On Error GoTo ErrorHandler
     
