@@ -247,6 +247,41 @@ class SolidWorksProfileGenerator:
             print(f"Error creating round tube profile: {e}")
             return False
     
+    def create_flat_bar_profile(self, width, thickness):
+        """
+        Create a flat bar (rectangular solid) profile sketch.
+        
+        Args:
+            width: Width of bar (inches)
+            thickness: Thickness of bar (inches)
+        """
+        try:
+            doc = self.sw_app.ActiveDoc
+            sketch_mgr = doc.SketchManager
+            
+            sketch_mgr.InsertSketch(True)
+            
+            # Convert to meters
+            w = width * 0.0254
+            t = thickness * 0.0254
+            
+            # Draw rectangle centered at origin
+            x1 = -w / 2
+            y1 = -t / 2
+            x2 = w / 2
+            y2 = t / 2
+            
+            sketch_mgr.CreateLine(x1, y1, 0, x2, y1, 0)  # Bottom
+            sketch_mgr.CreateLine(x2, y1, 0, x2, y2, 0)  # Right
+            sketch_mgr.CreateLine(x2, y2, 0, x1, y2, 0)  # Top
+            sketch_mgr.CreateLine(x1, y2, 0, x1, y1, 0)  # Left
+            
+            sketch_mgr.InsertSketch(True)
+            return True
+        except Exception as e:
+            print(f"Error creating flat bar profile: {e}")
+            return False
+    
     def add_custom_properties(self, properties):
         """
         Add custom properties to the part.
@@ -362,6 +397,11 @@ class SolidWorksProfileGenerator:
                 inner_diameter = float(profile_data['Inner_Diameter'])
                 success = self.create_round_tube_profile(outer_diameter, inner_diameter)
             
+            elif shape == "Flat Bar":
+                width = float(profile_data['Width'])
+                thickness = float(profile_data['Thickness'])
+                success = self.create_flat_bar_profile(width, thickness)
+            
             else:
                 print(f"  Unknown shape: {shape}")
                 self.close_document()
@@ -404,6 +444,9 @@ class SolidWorksProfileGenerator:
             properties['Outer_Diameter'] = profile_data.get('Outer_Diameter', '')
             properties['Inner_Diameter'] = profile_data.get('Inner_Diameter', '')
             properties['Wall_Thickness'] = profile_data.get('Wall_Thickness', '')
+        elif shape == "Flat Bar":
+            properties['Width'] = profile_data.get('Width', '')
+            properties['Thickness'] = profile_data.get('Thickness', '')
         
         self.add_custom_properties(properties)
         

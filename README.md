@@ -1,14 +1,14 @@
 # Coremark-Weldment-Profiles
 
-SolidWorks weldment profile library with 558 profiles from Coremark Metals including Steel, Aluminum, and Stainless Steel structural shapes with integrated pricing data.
+SolidWorks weldment profile library with 526 profiles from Coremark Metals including Steel, Aluminum, and Stainless Steel structural shapes with integrated pricing data.
 
 ## Overview
 
 This repository contains a Python script that automatically generates SolidWorks weldment profile files (.sldlfp) for structural shapes from Coremark Metals. The profiles include:
 
-- **Steel profiles**: Angles, Channels, Beams, Square Tubes, Rectangular Tubes, and Round Tubes
-- **Aluminum profiles**: Angles, Channels, Square Tubes, Rectangular Tubes, and Round Tubes
-- **Stainless Steel profiles**: Angles, Channels, Square Tubes, Rectangular Tubes, and Round Tubes
+- **Steel profiles** (254 profiles): Angles, Channels, Beams, Square Tubes, Rectangular Tubes, Round Tubes, and Flat Bars
+- **Aluminum profiles** (142 profiles): Angles, Channels, Square Tubes, Rectangular Tubes, Round Tubes, and Flat Bars
+- **Stainless Steel profiles** (130 profiles): Angles, Channels, Square Tubes, Rectangular Tubes, Round Tubes, and Flat Bars
 
 Each profile includes:
 - Accurate 2D sketch geometry representing the cross-section
@@ -125,7 +125,7 @@ weldment_profiles/
 ## Supported Profile Types
 
 ### Angle (L-Shape)
-Equal leg angles with specified width, height, and thickness.
+Equal and unequal leg angles with specified width, height, and thickness.
 
 ### Channel (C-Shape)
 C-channels with web and flange dimensions.
@@ -138,6 +138,9 @@ Hollow rectangular tubing with width, height, and wall thickness.
 
 ### Round Tube
 Circular hollow tubing with outer diameter, inner diameter, and wall thickness.
+
+### Flat Bar
+Solid rectangular bars with width and thickness dimensions.
 
 ## Custom Properties
 
