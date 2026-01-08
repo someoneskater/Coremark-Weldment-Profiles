@@ -1,0 +1,326 @@
+' SolidWorks Weldment Profile Generator - VBA Macro
+' 
+' This macro generates .sldlfp (SolidWorks Library Feature Part) files
+' for weldment profiles based on JSON data from Coremark Metals
+'
+' Instructions:
+' 1. Open SolidWorks
+' 2. Tools > Macro > Edit
+' 3. Paste this code
+' 4. Update file paths as needed
+' 5. Run the macro
+'
+' Requirements:
+' - SolidWorks 2020 or later
+' - profiles.json file in the data directory
+
+Option Explicit
+
+' Main entry point
+Sub Main()
+    Dim swApp As SldWorks.SldWorks
+    Dim jsonPath As String
+    Dim outputDir As String
+    
+    ' Initialize SolidWorks
+    Set swApp = Application.SldWorks
+    
+    ' Set paths (update these for your installation)
+    jsonPath = "C:\Coremark-Weldment-Profiles\data\profiles.json"
+    outputDir = "C:\Coremark-Weldment-Profiles\profiles\"
+    
+    ' Create output directory if it doesn't exist
+    If Dir(outputDir, vbDirectory) = "" Then
+        MkDir outputDir
+    End If
+    
+    ' Show message
+    MsgBox "Starting profile generation..." & vbCrLf & _
+           "This may take several minutes for all profiles.", _
+           vbInformation, "Weldment Profile Generator"
+    
+    ' Generate sample profiles (manual approach since VBA doesn't parse JSON easily)
+    Call GenerateSampleProfiles(swApp, outputDir)
+    
+    MsgBox "Profile generation complete!" & vbCrLf & _
+           "Files saved to: " & outputDir, _
+           vbInformation, "Complete"
+End Sub
+
+' Generate sample profiles
+Sub GenerateSampleProfiles(swApp As SldWorks.SldWorks, outputDir As String)
+    ' Generate some example profiles
+    ' In practice, you would parse the JSON file or have profiles defined here
+    
+    ' Sample Angles
+    Call CreateAngleProfile(swApp, outputDir, "ANG-0001", "Steel", 2, 2, 0.25, 2.5)
+    Call CreateAngleProfile(swApp, outputDir, "ANG-0002", "Aluminum", 3, 3, 0.25, 3.2)
+    Call CreateAngleProfile(swApp, outputDir, "ANG-0003", "Stainless Steel", 4, 4, 0.375, 5.8)
+    
+    ' Sample Square Tubes
+    Call CreateTubeProfile(swApp, outputDir, "TUB-0001", "Steel", 2, 2, 0.125, 3.1)
+    Call CreateTubeProfile(swApp, outputDir, "TUB-0002", "Aluminum", 3, 3, 0.188, 4.5)
+    
+    ' Sample Rectangular Tubes
+    Call CreateTubeProfile(swApp, outputDir, "TUB-0003", "Steel", 4, 2, 0.125, 3.8)
+    Call CreateTubeProfile(swApp, outputDir, "TUB-0004", "Aluminum", 6, 3, 0.188, 6.2)
+    
+    ' Sample Pipes
+    Call CreatePipeProfile(swApp, outputDir, "PIP-0001", "Steel", 1.5, 0.109, 2.1)
+    Call CreatePipeProfile(swApp, outputDir, "PIP-0002", "Aluminum", 2, 0.125, 2.8)
+    Call CreatePipeProfile(swApp, outputDir, "PIP-0003", "Stainless Steel", 3, 0.188, 5.5)
+    
+    ' Sample Channels
+    Call CreateChannelProfile(swApp, outputDir, "CHN-0001", "Steel", 6, 2.25, 0.2, 5.2)
+    Call CreateChannelProfile(swApp, outputDir, "CHN-0002", "Aluminum", 8, 2.75, 0.22, 7.1)
+    
+    ' Sample I-Beams
+    Call CreateBeamProfile(swApp, outputDir, "BEM-0001", "Steel", 6, 3.33, 0.23, 0.359, 8.5)
+    Call CreateBeamProfile(swApp, outputDir, "BEM-0002", "Steel", 8, 4.0, 0.27, 0.425, 12.3)
+    
+    ' Sample Flat Bars
+    Call CreateFlatBarProfile(swApp, outputDir, "BAR-0001", "Steel", 2, 0.25, 1.2)
+    Call CreateFlatBarProfile(swApp, outputDir, "BAR-0002", "Aluminum", 3, 0.375, 2.1)
+    Call CreateFlatBarProfile(swApp, outputDir, "BAR-0003", "Stainless Steel", 4, 0.5, 4.5)
+End Sub
+
+' Create L-shaped angle profile
+Sub CreateAngleProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                       profileID As String, material As String, _
+                       legA As Double, legB As Double, thickness As Double, _
+                       pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    
+    ' Create new part
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    ' Select Front plane and insert sketch
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    ' Draw L-shape
+    swSketchMgr.CreateLine 0, 0, 0, legA, 0, 0
+    swSketchMgr.CreateLine legA, 0, 0, legA, thickness, 0
+    swSketchMgr.CreateLine legA, thickness, 0, thickness, thickness, 0
+    swSketchMgr.CreateLine thickness, thickness, 0, thickness, legB, 0
+    swSketchMgr.CreateLine thickness, legB, 0, 0, legB, 0
+    swSketchMgr.CreateLine 0, legB, 0, 0, 0, 0
+    
+    ' Exit sketch
+    swModel.InsertSketch2 True
+    
+    ' Add custom properties
+    Call AddCustomProperties(swModel, profileID, material, "Angle " & legA & "x" & legB & "x" & thickness, pricePerFoot)
+    
+    ' Save file
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Create rectangular/square tube profile
+Sub CreateTubeProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                      profileID As String, material As String, _
+                      width As Double, height As Double, thickness As Double, _
+                      pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    ' Draw outer rectangle
+    swSketchMgr.CreateCenterRectangle 0, 0, 0, width / 2, height / 2, 0
+    
+    ' Draw inner rectangle
+    Dim innerW As Double, innerH As Double
+    innerW = (width - 2 * thickness) / 2
+    innerH = (height - 2 * thickness) / 2
+    swSketchMgr.CreateCenterRectangle 0, 0, 0, innerW, innerH, 0
+    
+    swModel.InsertSketch2 True
+    
+    Call AddCustomProperties(swModel, profileID, material, "Tube " & width & "x" & height & "x" & thickness, pricePerFoot)
+    
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Create round pipe profile
+Sub CreatePipeProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                      profileID As String, material As String, _
+                      outerDia As Double, thickness As Double, _
+                      pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    Dim innerDia As Double
+    
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    ' Draw outer circle
+    swSketchMgr.CreateCircleByRadius 0, 0, 0, outerDia / 2
+    
+    ' Draw inner circle
+    innerDia = outerDia - 2 * thickness
+    swSketchMgr.CreateCircleByRadius 0, 0, 0, innerDia / 2
+    
+    swModel.InsertSketch2 True
+    
+    Call AddCustomProperties(swModel, profileID, material, "Pipe " & outerDia & "x" & thickness, pricePerFoot)
+    
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Create C-channel profile
+Sub CreateChannelProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                         profileID As String, material As String, _
+                         depth As Double, width As Double, thickness As Double, _
+                         pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    Dim halfDepth As Double
+    
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    halfDepth = depth / 2
+    
+    ' Draw C-channel
+    swSketchMgr.CreateLine -width, -halfDepth, 0, -width, halfDepth, 0
+    swSketchMgr.CreateLine -width, halfDepth, 0, -width + thickness, halfDepth, 0
+    swSketchMgr.CreateLine -width + thickness, halfDepth, 0, -width + thickness, -halfDepth + thickness, 0
+    swSketchMgr.CreateLine -width + thickness, -halfDepth + thickness, 0, 0, -halfDepth + thickness, 0
+    swSketchMgr.CreateLine 0, -halfDepth + thickness, 0, 0, -halfDepth, 0
+    swSketchMgr.CreateLine 0, -halfDepth, 0, -width, -halfDepth, 0
+    
+    swModel.InsertSketch2 True
+    
+    Call AddCustomProperties(swModel, profileID, material, "C-Channel " & depth & "x" & width & "x" & thickness, pricePerFoot)
+    
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Create I-beam profile
+Sub CreateBeamProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                      profileID As String, material As String, _
+                      depth As Double, flangeWidth As Double, _
+                      webThick As Double, flangeThick As Double, _
+                      pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    Dim halfD As Double, halfF As Double, halfW As Double
+    
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    halfD = depth / 2
+    halfF = flangeWidth / 2
+    halfW = webThick / 2
+    
+    ' Draw I-beam shape
+    swSketchMgr.CreateLine -halfF, -halfD, 0, halfF, -halfD, 0
+    swSketchMgr.CreateLine halfF, -halfD, 0, halfF, -halfD + flangeThick, 0
+    swSketchMgr.CreateLine halfF, -halfD + flangeThick, 0, halfW, -halfD + flangeThick, 0
+    swSketchMgr.CreateLine halfW, -halfD + flangeThick, 0, halfW, halfD - flangeThick, 0
+    swSketchMgr.CreateLine halfW, halfD - flangeThick, 0, halfF, halfD - flangeThick, 0
+    swSketchMgr.CreateLine halfF, halfD - flangeThick, 0, halfF, halfD, 0
+    swSketchMgr.CreateLine halfF, halfD, 0, -halfF, halfD, 0
+    swSketchMgr.CreateLine -halfF, halfD, 0, -halfF, halfD - flangeThick, 0
+    swSketchMgr.CreateLine -halfF, halfD - flangeThick, 0, -halfW, halfD - flangeThick, 0
+    swSketchMgr.CreateLine -halfW, halfD - flangeThick, 0, -halfW, -halfD + flangeThick, 0
+    swSketchMgr.CreateLine -halfW, -halfD + flangeThick, 0, -halfF, -halfD + flangeThick, 0
+    swSketchMgr.CreateLine -halfF, -halfD + flangeThick, 0, -halfF, -halfD, 0
+    
+    swModel.InsertSketch2 True
+    
+    Call AddCustomProperties(swModel, profileID, material, "I-Beam " & depth & "x" & flangeWidth, pricePerFoot)
+    
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Create flat bar profile
+Sub CreateFlatBarProfile(swApp As SldWorks.SldWorks, outputDir As String, _
+                         profileID As String, material As String, _
+                         width As Double, thickness As Double, _
+                         pricePerFoot As Double)
+    
+    Dim swModel As SldWorks.ModelDoc2
+    Dim swSketchMgr As SldWorks.SketchManager
+    Dim boolStatus As Boolean
+    Dim fileName As String
+    
+    Set swModel = swApp.NewDocument("C:\ProgramData\SolidWorks\SOLIDWORKS 2024\templates\Part.prtdot", 0, 0, 0)
+    If swModel Is Nothing Then Exit Sub
+    
+    boolStatus = swModel.Extension.SelectByID2("Front Plane", "PLANE", 0, 0, 0, False, 0, Nothing, 0)
+    swModel.InsertSketch2 True
+    Set swSketchMgr = swModel.SketchManager
+    
+    ' Draw rectangle
+    swSketchMgr.CreateCenterRectangle 0, 0, 0, width / 2, thickness / 2, 0
+    
+    swModel.InsertSketch2 True
+    
+    Call AddCustomProperties(swModel, profileID, material, "Flat Bar " & width & "x" & thickness, pricePerFoot)
+    
+    fileName = outputDir & profileID & "_" & Replace(material, " ", "_") & ".sldlfp"
+    swModel.SaveAs3 fileName, 0, 2
+    swApp.CloseDoc fileName
+End Sub
+
+' Add custom properties to model
+Sub AddCustomProperties(swModel As SldWorks.ModelDoc2, _
+                        profileID As String, material As String, _
+                        description As String, pricePerFoot As Double)
+    
+    Dim swCustProp As SldWorks.CustomPropertyManager
+    Set swCustProp = swModel.Extension.CustomPropertyManager("")
+    
+    swCustProp.Add3 "Profile_ID", 30, profileID, 2
+    swCustProp.Add3 "Material", 30, material, 2
+    swCustProp.Add3 "Description", 30, description, 2
+    swCustProp.Add3 "Price_Per_Foot", 30, CStr(pricePerFoot), 2
+    swCustProp.Add3 "Vendor", 30, "Coremark Metals", 2
+End Sub

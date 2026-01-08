@@ -41,7 +41,7 @@ wheels/
 # Temporary files
 *.tmp
 *.bak
-*.swp
+.*.swp
 *.log
 *~
 
